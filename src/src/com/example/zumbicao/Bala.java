@@ -1,10 +1,10 @@
 package com.example.zumbicao;
 
-import org.andengine.engine.handler.physics.PhysicsHandler;
-import org.andengine.entity.IEntity;
-import org.andengine.entity.sprite.Sprite;
-import org.andengine.opengl.texture.region.ITextureRegion;
-import org.andengine.opengl.vbo.VertexBufferObjectManager;
+import org.anddev.andengine.engine.handler.physics.PhysicsHandler;
+import org.anddev.andengine.entity.IEntity;
+import org.anddev.andengine.entity.sprite.Sprite;
+import org.anddev.andengine.opengl.texture.region.TiledTextureRegion;
+import org.anddev.andengine.opengl.vertex.VertexBuffer;
 
 public class Bala extends Sprite implements IEntity{
 
