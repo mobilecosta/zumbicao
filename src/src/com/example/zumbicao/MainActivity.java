@@ -1,51 +1,34 @@
 package com.example.zumbicao;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import org.andengine.audio.sound.Sound;
-import org.andengine.engine.camera.Camera;
-import org.andengine.engine.handler.IUpdateHandler;
-import org.andengine.engine.handler.physics.PhysicsHandler;
-import org.andengine.engine.handler.timer.ITimerCallback;
-import org.andengine.engine.handler.timer.TimerHandler;
-import org.andengine.engine.options.AudioOptions;
-import org.andengine.engine.options.EngineOptions;
-import org.andengine.engine.options.ScreenOrientation;
-import org.andengine.engine.options.WakeLockOptions;
-import org.andengine.engine.options.resolutionpolicy.FillResolutionPolicy;
-import org.andengine.engine.options.resolutionpolicy.RatioResolutionPolicy;
-import org.andengine.entity.IEntity;
-import org.andengine.entity.modifier.JumpModifier;
-import org.andengine.entity.scene.CameraScene;
-import org.andengine.entity.scene.Scene;
-import org.andengine.entity.scene.background.AutoParallaxBackground;
-import org.andengine.entity.scene.background.Background;
-import org.andengine.entity.scene.background.ParallaxBackground.ParallaxEntity;
-import org.andengine.entity.shape.IShape;
-import org.andengine.entity.sprite.AnimatedSprite;
-import org.andengine.entity.sprite.AnimatedSprite.IAnimationListener;
-import org.andengine.entity.sprite.Sprite;
-import org.andengine.entity.sprite.vbo.ITiledSpriteVertexBufferObject;
-import org.andengine.input.touch.TouchEvent;
-import org.andengine.input.touch.detector.SurfaceGestureDetector;
-import org.andengine.opengl.texture.TextureOptions;
-import org.andengine.opengl.texture.atlas.bitmap.BitmapTextureAtlas;
-import org.andengine.opengl.texture.atlas.bitmap.BitmapTextureAtlasTextureRegionFactory;
-import org.andengine.opengl.texture.region.ITextureRegion;
-import org.andengine.opengl.texture.region.ITiledTextureRegion;
-import org.andengine.opengl.texture.region.TiledTextureRegion;
-import org.andengine.opengl.vbo.VertexBufferObjectManager;
-import org.andengine.ui.activity.SimpleBaseGameActivity;
+import org.anddev.andengine.engine.Engine;
+import org.anddev.andengine.engine.camera.Camera;
+import org.anddev.andengine.engine.handler.IUpdateHandler;
+import org.anddev.andengine.engine.handler.physics.PhysicsHandler;
+import org.anddev.andengine.engine.handler.timer.ITimerCallback;
+import org.anddev.andengine.engine.handler.timer.TimerHandler;
+import org.anddev.andengine.engine.options.EngineOptions;
+import org.anddev.andengine.engine.options.EngineOptions.ScreenOrientation;
+//import org.anddev.andengine.entity.modifier.JumpModifier;
+import org.anddev.andengine.engine.options.resolutionpolicy.FillResolutionPolicy;
+import org.anddev.andengine.entity.scene.Scene;
+import org.anddev.andengine.entity.scene.background.AutoParallaxBackground;
+import org.anddev.andengine.entity.scene.background.ParallaxBackground.ParallaxEntity;
+import org.anddev.andengine.entity.shape.IShape;
+import org.anddev.andengine.entity.sprite.AnimatedSprite;
+import org.anddev.andengine.entity.sprite.AnimatedSprite.IAnimationListener;
+import org.anddev.andengine.entity.sprite.Sprite;
+import org.anddev.andengine.input.touch.TouchEvent;
+import org.anddev.andengine.input.touch.detector.SurfaceGestureDetector;
+import org.anddev.andengine.opengl.texture.TextureOptions;
+import org.anddev.andengine.opengl.texture.atlas.bitmap.BitmapTextureAtlas;
+import org.anddev.andengine.opengl.texture.atlas.bitmap.BitmapTextureAtlasTextureRegionFactory;
+import org.anddev.andengine.opengl.texture.region.TiledTextureRegion;
+import org.anddev.andengine.ui.activity.BaseGameActivity;
 
-import android.media.AudioTrack;
-import android.os.Bundle;
-import android.provider.MediaStore.Audio;
-import android.app.Activity;
-import android.view.Menu;
-
-public class MainActivity extends SimpleBaseGameActivity {
+public class MainActivity extends BaseGameActivity {
 
 	private static final int LARGURA = 800;
 	private static final int ALTURA = 480;
@@ -70,24 +53,24 @@ public class MainActivity extends SimpleBaseGameActivity {
 
 	
 	@Override
-	public EngineOptions onCreateEngineOptions() {
+	public Engine onLoadEngine() {
 
 		final Camera camera = new Camera(0, 0, LARGURA, ALTURA);
 //		EngineOptions opcoes = new EngineOptions(true,
 //				ScreenOrientation.LANDSCAPE_FIXED, new RatioResolutionPolicy(
 //						LARGURA, ALTURA), camera);
 
-		EngineOptions opcoes = new EngineOptions(true,
-				ScreenOrientation.LANDSCAPE_FIXED, new FillResolutionPolicy(), camera);
+		Engine opcoes = new EngineOptions(true,
+				ScreenOrientation.LANDSCAPE, new FillResolutionPolicy(), camera);
 		
-		opcoes.getAudioOptions().setNeedsSound(true);
+		opcoes.getAgetAudioOptions().setNeedsSound(true);
 		opcoes.setWakeLockOptions(WakeLockOptions.SCREEN_ON);
 		return opcoes;
 
 	}
 
 	@Override
-	protected void onCreateResources() {
+	protected void onLoadResources() {
 		mEngine.enableVibrator(this);
 		BitmapTextureAtlasTextureRegionFactory.setAssetBasePath("gfx/");
 
@@ -248,7 +231,7 @@ public class MainActivity extends SimpleBaseGameActivity {
 	}
 
 	@Override
-	protected Scene onCreateScene() {
+	protected Scene onLoadScene() {
 		cena = new Scene();
 		// background.setParallaxChangePerSecond(5);
 		cena.setBackground(background);

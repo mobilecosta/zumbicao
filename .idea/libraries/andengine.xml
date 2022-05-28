@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="andengine">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/libs/andengine.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/src/libs/andengine.jar!/" />
+    </SOURCES>
+  </library>
+</component>
