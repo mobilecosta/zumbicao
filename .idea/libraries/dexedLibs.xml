@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="dexedLibs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/bin/dexedLibs/android-support-v4-001ae1b6443b955310998cf38398d52d.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/bin/dexedLibs/andenginephysicsbox2dextension-3cd67261e3fc6e771259e8af18b514ea.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/bin/dexedLibs/android-support-v4-de174fd48eb84967947fde443d4771c6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/bin/dexedLibs/andengine-a959f0fde81930312a981b880ad8c572.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/bin/dexedLibs/andengine-gles1-3b537c4611cc73274cf7236061197d84.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
